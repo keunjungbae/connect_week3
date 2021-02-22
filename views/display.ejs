@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<title>ITP classes!</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <h3>All you've got</h3>
+
+    <% for (var i = 0; i < submissions_on_page.length; i++) { %>
+    <%      var fontSize = Math.floor(Math.random() * 100) + 10; %>
+    <div style="font-size: <%- fontSize %>px"> <%= submissions_on_page[i].submission; %>
+    </div>
+    <% } %>
+    
+    <p><a href='/index.html'>submit another</a></p>
+</body>
+</html>

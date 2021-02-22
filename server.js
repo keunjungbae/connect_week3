@@ -31,8 +31,8 @@ app.post('/formpost', function (req, res) {
 			  console.log("No results");
 		  }
 		else {
-					 console.log(saved);
-					 res.render('display.ejs',{submissions_on_page:saved});
+			  console.log(saved);
+			  res.render('display.ejs',{submissions_on_page:saved});
 		   }
 	  })
   })

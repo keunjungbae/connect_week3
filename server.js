@@ -14,15 +14,11 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-
-
-
-
 app.post('/formpost', function (req, res) {
 	var submission = req.body.textfield;
 	console.log("They submitted: " + submission);
 	res.render('template.ejs',{response:submission})
-	// save submission into the database in the argument "saved"
+
 	db.submissions.save({"submission":submission}, function(err, saved) {
 		if( err || !saved ) console.log("Not saved");
 		else console.log("Saved");
@@ -30,7 +26,6 @@ app.post('/formpost', function (req, res) {
   })
   
   app.get('/display', function(req, res) {
-	// pull all submissions from database to render on display file
 	db.submissions.find({}, function(err, saved) {
 		if (err || !saved) {
 			  console.log("No results");
